@@ -2,6 +2,8 @@
 
 `fillInWhen2Meet` is a [Julia](https://julialang.org) program that uses [Selenium](https://www.selenium.dev) and [ChromeDriver](https://chromedriver.chromium.org) along with a Mac [Shortcut](https://support.apple.com/guide/shortcuts-mac/intro-to-shortcuts-apdf22b0444c/mac) to automatically fill in a [When2Meet](https://www.when2meet.com) poll marking times you are available according to your calendar. You are then free to adjust the poll after the fill-in.
 
+Skip to instructions for  [Running](#running).
+
 ## What you will need
 
 - A Mac
