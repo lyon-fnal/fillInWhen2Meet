@@ -10,7 +10,7 @@ Skip to instructions for  [Running](#running).
 - The calendar(s) you want to use need to be accessible from the Mac Calendar program
 - Chrome installed on your Mac
 
-If you want to follow the installations instructions here, you will also need
+If you want to follow the installation instructions here, you will also need
 - [Homebrew](https://brew.sh) installed
 - [Anaconda](https://www.anaconda.com), [Miniconda](https://docs.conda.io/en/latest/miniconda.html), or [Miniforge](https://github.com/conda-forge/miniforge) installed (e.g. an Anaconda-like python installation)
 
