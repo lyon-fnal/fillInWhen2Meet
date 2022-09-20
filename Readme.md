@@ -113,9 +113,11 @@ Within a few seconds, the automated Chrome browser should appear. You should als
 
 If you've been given a URL for a poll, copy and paste that into the automated Chrome's URL box (replace `data:,`). Otherwise, enter `when2meet.com` and set up a poll. You can do specific dates or days of the week. When it is set up, then click `Create Event`. Then sign in on the page that appears.
 
+Note that the password is optional. If you do fill one in, then that will allow you to change your availability later (use the same name and password as before). You can then update your availabiility if your calendar changes. Note that you should not run this script again on a filled in poll. It will likley reverse your availability! If you choose to run the script again, before allowing it to continue clear out your availability (e.g. make yourself completely unavailable).
+
 Once you've signed in, you should see the availability grid on the left side of the screen. Now go back to the terminal window and press `ENTER` to continue the Julia program.
 
-The program will check your calendar for the necessary days and will mark times that you are available. Once the program completes, you can make any changes you need to the poll. Then you're done!
+The program will check your calendar for the necessary days and will mark times that you are available. Once the program completes, you can make any changes you need to the poll. Note that the script will not mark day-long events (e.g. an event without times).
 
 If the poll is for days of the week instead of specific days, the program will use your calendar for the current week. You will need to make manual adjustments if this week is not representitive of your normal calendar.
 
