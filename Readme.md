@@ -99,7 +99,7 @@ You should change the query to reflect the calendars you want to use when fillin
 When done, then close the Shortcut window.
 
 ### Adjusting the time zone
-If you are in the US Central time zone, then you don't need to do anything. If you are in a different time zone, then edit the `fillInWhen2Meet.jl` file, and around line 109, change `tz"America/Chicago"` to the identifier appropriate to your time zone, like `tz"America/New_York"`. See [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the full list.
+If you are in the US Central time zone, then you don't need to do anything. If you are in a different time zone, then edit the `fillInWhen2Meet.jl` file, and around line 109, change `tz"America/Chicago"` to the identifier appropriate to your time zone, like `tz"America/New_York"`, `tz"America/Los_Angeles"`, or `tz"Antarctica/Troll"`. See [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for the full list.
 
 ## Running
 
