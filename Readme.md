@@ -26,13 +26,13 @@ Note that to make running Julia easy, I set up a softlink...
 sudo ln -sf /Applications/Julia-1.8.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
 ```
 
-With that, you just type `julia` on the commnad line.
+With that, you just type `julia` on the command line.
 
 Note that you'll need to re-do this soft link when Julia goes to the next major version, like `v1.9`. You don't need to change this for minor updates, like when `v1.8.2` comes out.
 
 ### Install Selenium and Chrome Driver
 
-In a Mac terminal (assuming you have an Ananconda-like Python installation and Homebrew)...
+In a Mac terminal (assuming you have an Anaconda-like Python installation and Homebrew)...
 
 ```bash
 conda install selenium
@@ -77,7 +77,7 @@ build PyCall
 <Backspace Key>
 ```
 
-The `]` puts Julia into "Package mode". The `instantiate` will look at the enviroment definition and download and install the packages you need. `build PyCall` will ensure that the `PyCall.jl` library will use your Anaconda-like installation of python (the `instantiate` command will likely do that, but it doesn't hurt to build it again manually). Finally, pressing the `<Backspace key>` on a new line will exit Package mode.
+The `]` puts Julia into "Package mode". The `instantiate` will look at the environment definition and download and install the packages you need. `build PyCall` will ensure that the `PyCall.jl` library will use your Anaconda-like installation of python (the `instantiate` command will likely do that, but it doesn't hurt to build it again manually). Finally, pressing the `<Backspace key>` on a new line will exit Package mode.
 
 You can leave Julia with `Control-D`.
 
@@ -103,23 +103,40 @@ If you are in the US Central time zone, then you don't need to do anything. If y
 
 ## Running
 
-Assuming you've followed all of the installation instructions above, you should `cd` to the respository directory and do,
+Assuming you've followed all of the installation instructions above, you should `cd` to the repository directory and do,
 
 ```bash
 julia --project fillInWhen2Meet.jl
 ```
 
-Within a few seconds, the automated Chrome browser should appear. You should also see a message in the terminal window telling you to navigate to When2Meet and sign in.
+Within a few seconds, the automated Chrome browser should appear. You should also see a message in the terminal window telling you to navigate to When2Meet and sign in. See Troubleshooting below if you get a pop up window that Apple cannot check the `chromedriver` file for malicious content. 
 
 If you've been given a URL for a poll, copy and paste that into the automated Chrome's URL box (replace `data:,`). Otherwise, enter `when2meet.com` and set up a poll. You can do specific dates or days of the week. When it is set up, then click `Create Event`. Then sign in on the page that appears.
 
-Note that the password is optional. If you do fill one in, then that will allow you to change your availability later (use the same name and password as before). You can then update your availabiility if your calendar changes. Note that you should not run this script again on a filled in poll. It will likley reverse your availability! If you choose to run the script again, before allowing it to continue clear out your availability (e.g. make yourself completely unavailable).
+Note that the password is optional. If you do fill one in, then that will allow you to change your availability later (use the same name and password as before). You can then update your availability if your calendar changes. Note that you should not run this script again on a filled in poll. It will likely reverse your availability! If you choose to run the script again, before allowing it to continue clear out your availability (e.g. make yourself completely unavailable).
 
 Once you've signed in, you should see the availability grid on the left side of the screen. Now go back to the terminal window and press `ENTER` to continue the Julia program.
 
 The program will check your calendar for the necessary days and will mark times that you are available. Once the program completes, you can make any changes you need to the poll. Note that the script will not mark day-long events (e.g. an event without times).
 
 If the poll is for days of the week instead of specific days, the program will use your calendar for the current week. You will need to make manual adjustments if this week is not representitive of your normal calendar.
+
+## Troubleshooting
+
+You may get a popup window that says that you cannot run `chromedriver` because Apple cannot check the file for malicious content. If that happens, then do the following from the command line...
+
+```bash
+brew info chromedriver
+
+# You should see a directory on your Mac where the `chromedriver` file is stored. 
+# For example
+cd /opt/homebrew/Caskroom/chromedriver/109.0.5414.74  # This is for my Mac. Yours may be different
+
+# Now remove the "quarantine" bit from the file with
+xattr -d com.apple.quarantine chromedriver 
+
+# The julia command should now work
+```
 
 ## Why didn't you...
 
